@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         providers: [
           BlocProvider<ExampleCubit>(
             create: (context) => ExampleCubit(
-              usecase: sl(),
+              interactor: sl(),
             ),
           )
         ],

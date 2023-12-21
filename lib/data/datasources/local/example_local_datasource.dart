@@ -1,4 +1,4 @@
-import 'package:flutter_architecture/data/models/response/example_response_models.dart';
+import 'package:flutter_architecture/domain/entities/response/example_response_models.dart';
 
 abstract class ExampleLocalDatasource {
   Future<ExampleResponseModel> fetchExample();

@@ -1,13 +1,13 @@
-import 'package:flutter_architecture/domain/usecases/get_example_usecase.dart';
+import 'package:flutter_architecture/domain/interactor/get_example_usecase.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_architecture/presenter/bloc/example_state.dart';
 import 'package:flutter_architecture/utils/view_data_state.dart';
 
 class ExampleCubit extends Cubit<ExampleState> {
-  final GetExampleUsecase usecase;
+  final GetExampleInteractor interactor;
 
   ExampleCubit({
-    required this.usecase,
+    required this.interactor,
   }) : super(
           ExampleState(
             exampleState: ViewData.initial(),
@@ -24,7 +24,7 @@ class ExampleCubit extends Cubit<ExampleState> {
     );
 
     try {
-      final result = await usecase.call();
+      final result = await interactor.call();
       emit(
         state.copyWith(
           exampleState: ViewData.loaded(
